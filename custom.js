@@ -7,34 +7,42 @@ input.addEventListener("keydown", function(event){
     addItem();
 })
 
+
 function addItem(){
     const divParent = document.createElement("div");
     const divChild = document.createElement("div");
     const checkIcon = document.createElement("i");
-    const trashIcon = document.createElement("i");
+    const trashIcon = document.createElement("i"); 
 
     divParent.className = "item";
-    divParent.innerHTML = '<div>'+input.value+'</div>';
+        if(input.value === ""){
+          alert("Please enter any text")  
+        } 
+        
+        else {
+            divParent.innerHTML = '<div>'+input.value+'</div>';        
+       
+            checkIcon.className = "fas fa-check-square";
+            checkIcon.style.color = "lightgrey";
+            checkIcon.addEventListener("click", function(){
+            checkIcon.style.color = "limegreen";
+            })
 
-    checkIcon.className = "fas fa-check-square";
-    checkIcon.style.color = "lightgrey";
-    checkIcon.addEventListener("click", function(){
-        checkIcon.style.color = "limegreen";
-    })
+            divChild.appendChild(checkIcon);
 
-    divChild.appendChild(checkIcon);
+            trashIcon.className = "fas fa-trash";
+            trashIcon.style.color = "darkgray";
+            trashIcon.addEventListener("click", function(){
+            divParent.remove();
+            })
 
-    trashIcon.className = "fas fa-trash";
-    trashIcon.style.color = "darkgray";
-    trashIcon.addEventListener("click", function(){
-        divParent.remove();
-    })
+            divChild.appendChild(trashIcon);
 
-    divChild.appendChild(trashIcon);
+            divParent.appendChild(divChild);
+            toDoItems.appendChild(divParent);
 
-    divParent.appendChild(divChild);
-    toDoItems.appendChild(divParent);
+            input.value = " ";
 
-    input.value = '';
+        }      
 
 }
