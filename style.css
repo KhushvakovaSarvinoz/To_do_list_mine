@@ -7,9 +7,10 @@
 
 body{
     font-family: 'Fredoka One', cursive;
-    background-image: linear-gradient(to right, #34ebe9, #ff839d);
-    color:#fff;
-    position: relative;
+    background-image:url("/gif/doing_homework.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
 
 .contanier{
@@ -49,8 +50,8 @@ body{
 }
 
 .user-input input:focus{
-    box-shadow: 0 0 5px green;
-    border: 1px solid green;
+    box-shadow: 0 0 5px #ffd300;
+    border: 1px solid #ffd300;
 }
 
 .user-input button{
@@ -59,7 +60,7 @@ body{
     width: fit-content;
     transition: 1s;
     outline: none;
-    background-color: lightgray;
+    background-color: #ffd300;
     border: 1px solid lightgray;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -95,8 +96,8 @@ body{
 }
 
 .item:hover{
-    box-shadow: 0 0 20px green;
-    border: 1px solid green;
+    box-shadow: 0 0 20px #ffd300;
+    border: 1px solid #ffd300;
 }
 
 .item i{
@@ -134,13 +135,6 @@ body{
     }
 }
 
-.gif{
-    width: 300px;
-    height: 300px;
-    margin-left: 300px;
-    position: absolute;
-
-}
 
     
 

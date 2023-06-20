@@ -5,6 +5,7 @@ const trashIcon = document.querySelector("#trash");
 input.addEventListener("keydown", function(event){
     if(event.key === "Enter")
     addItem();
+
 })
 
 
@@ -15,11 +16,7 @@ function addItem(){
     const trashIcon = document.createElement("i"); 
 
     divParent.className = "item";
-        if(input.value === ""){
-          alert("Please enter any text")  
-        } 
-        
-        else {
+        if(input.value){
             divParent.innerHTML = '<div>'+input.value+'</div>';        
        
             checkIcon.className = "fas fa-check-square";
@@ -41,7 +38,7 @@ function addItem(){
             divParent.appendChild(divChild);
             toDoItems.appendChild(divParent);
 
-            input.value = " ";
+            input.value = ""
 
         }      
 
